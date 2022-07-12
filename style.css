@@ -1,0 +1,139 @@
+/* I usually start with a reset of margin and padding to make those operations easier later on. */
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Defining a variable to be used multiple times */
+
+:root {
+    --main-color:hsl(125, 100%, 50%);
+}
+
+
+h3 {
+    color: white;
+    display: inline;
+    font-size: 2rem;
+}
+
+p {
+    color: rgb(235, 235, 235);
+    font-size: 1.3rem;
+}
+
+/* Adjusting the style and position of the list */
+
+.monopattini {
+    list-style:none;
+    text-align: left;
+    color: white;
+    margin-top: 45px;
+}
+
+/* This is to make sure no scrollbar appears */
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Uploading and positioning of the background image - using flex to center it and place it closer to the top of the page */
+.background-img {
+    background-image: url(/img/background.jpg);
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Using the alpha channel of RGBA I can set a background color with its own opacity without it affecting the text that's on top.
+ */
+/* Using percentages to size it means that if the window is resized, everything stays coherent, up until a certain point which would be a responsive concern. */
+.foreground {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    padding: 60px 100px;
+    padding-top:0px;
+    margin-top: 80px;
+    width: 62%;
+    height: 70%;
+}
+
+/* Scaling the logo to the desired size, I'm not sure why the margin remains the same as before the scaling, so I used some negative margin to place it where I want it. */
+
+.logo {
+    transform: scale(40%);
+    margin-bottom: -20px;
+}
+
+.foreground h1 {
+    color: var(--main-color);
+    margin-bottom: 20px; 
+}
+
+
+.button-container {
+    background-color: var(--main-color);
+    padding: 10px 0;
+}
+
+button {
+    font-size: 1.1rem;
+    margin: 0 5px;
+    padding: 2px 4px;
+}
+
+
+/* Having a fixed height but a width expressed in percentages allows us for future editing of the value */
+.carica-1 {
+    background-color: hsl(39, 98%, 63%);
+    height: 35px;
+    width: 35%;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+.carica-2 {
+    background-color: hsl(100, 91%, 38%);
+    height: 35px;
+    width: 60%;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+
+}
+.carica-3 {
+    background-color: hsl(17, 88%, 44%);
+    height: 35px;
+    width: 12%;
+    border-radius: 5px;
+    margin-bottom: 55px;
+    margin-top: 5px;
+
+}
+
+/* I was unable to use the nth-child selector to change the margin just for the street name. I know this isn't ideal but I just created another class and used it just for this. */
+
+.via {
+    margin-bottom: 3px;
+    margin-top: 5px;
+}
+
+/* Having the input and the scooter name as display inline allows us to show them side by side. */
+
+input {
+    display: inline;
+    margin-right: 5px;
+}
+
+.fa-arrow-right {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
